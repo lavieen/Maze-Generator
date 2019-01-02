@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+button{
+  overflow:visible;
+  border:0;
+  font:inherit;
+  -webkit-font-smoothing:inherit;
+  letter-spacing:inherit;
+  background:none;
+  cursor:pointer
+}
+
+
+:root {
+    --maze-size: 400px;
+    --maze-num: 25;
+}
+
+#title {
+    font-weight: 400;
+    margin-top: 0.5em;
+    font-size: 3em;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+.Maze {
+    width: var(--maze-size);
+    height: var(--maze-size);
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(var(--maze-num), auto);
+    grid-template-rows: repeat(var(--maze-num), auto);
+    grid-gap: 1px;
+}
+
+.cell {
+  background-color: #dfe6e9;
+  opacity: 0.7;
+}
+
+.top {
+	border-top: 1px solid gray;
+}
+
+.right {
+	border-right: 1px solid gray;
+}
+
+.bottom {
+	border-bottom: 1px solid gray;
+}
+
+.left {
+	border-left: 1px solid gray;
+}
+
+.visited {
+	background-color: white;
+}
+
+.active {
+	background-color: black;
+}
+
+.Controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.start, .stop, .reload {
+  color: white;
+  padding: 7px 12px;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 3px;
+  border-radius: 3px;
+}
+
+.start {
+    background-color: #00b894;
+}
+
+.stop {
+    background-color: #d63031;
+}
+
+.reload {
+    background-color: #00b894;
+}
+
+.hidden {
+    display: none;
+}
