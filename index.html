@@ -1,23 +1,58 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Maze Generation</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<h1 id="title">MAZE GENERATOR</h1>
-	<div class="Maze"></div>
-	<div class="Controls">
-		<button class="start">Start</button>
-		<button class="stop hidden">Stop</button>
-		<button class="reload hidden">Reload</button>
-	</div>
+  <head>
+    <title>Maze Generation</title>
 
-</body>
-	<script
-	src="https://code.jquery.com/jquery-3.3.1.min.js"
-	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-	crossorigin="anonymous"></script>
-	<script src="cell.js"></script>
-	<script src="maze.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" href="reset.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <p class="title">MAZE GENERATOR</p>
+    <div class="mazeShadow">
+      <div class="Maze"></div>
+    </div>
+    <div class="Controls">
+      <button class="start">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          viewBox="0 0 25 25"
+          class="play"
+        >
+          <path d="M8 5v14l11-7z"></path>
+        </svg>
+        <span>Start</span>
+      </button>
+      <button class="stop hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          viewBox="0 0 20 25"
+          class="stop"
+        >
+          <path d="M6 6h12v12H6z"></path>
+        </svg>
+        <span>Stop</span>
+      </button>
+      <button class="reload hidden">
+        <span>Reload</span>
+      </button>
+    </div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"
+  ></script>
+  <script src="cell.js"></script>
+  <script src="maze.js"></script>
 </html>

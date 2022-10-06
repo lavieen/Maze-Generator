@@ -1,110 +1,151 @@
 * {
-    box-sizing: border-box
+  box-sizing: border-box;
+}
+
+:root {
+  --red: #d00d0b;
+  --yellow: #f6f4a6;
+  --light-yellow: #f7f6ba;
+  --green: #2b560a;
+  --light-green: #6a8e33;
+  --black: #0f250a;
+  --grey: #b2b2b2;
+  --blue: #00b894;
+
+  /* Game Settings */
+  --maze-size: 70vh;
+  --maze-num: 25;
+  --cell-border: 8px solid var(--green);
 }
 
 html,
 body {
-    width: 100%;
-    height: 100%;
-    background: rgb(255, 255, 255);
-    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background: var(--light-yellow);
+  font-family: "Roboto Mono", monospace;
 }
 
 body {
-    margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-button{
-  overflow:visible;
-  border:0;
-  font:inherit;
-  -webkit-font-smoothing:inherit;
-  letter-spacing:inherit;
-  background:none;
-  cursor:pointer
+button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--light-red);
+  border: 3px solid black;
+  border-radius: 3px;
+  margin: 0;
+  padding: 4px 14px;
+  fill: var(--red);
+  stroke: black;
+  stroke-width: 3px;
+  font-family: inherit;
+  font-weight: bold;
+  box-shadow: 0 3px var(--grey);
+  cursor: pointer;
+  height: 50px;
+  width: 150px;
+  font-size: 20px;
 }
 
-
-:root {
-    --maze-size: 400px;
-    --maze-num: 25;
+.title {
+  padding-top: 30px;
+  padding-bottom: 40px;
+  font-weight: 600;
+  font-size: 3em;
+  letter-spacing: 4px;
+  text-align: center;
+  color: var(--green);
 }
 
-#title {
-    font-weight: 400;
-    margin-top: 0.5em;
-    font-size: 3em;
-    letter-spacing: 4px;
-    text-align: center;
+.mazeShadow {
+  padding: 24px;
+  border-radius: 14px;
+  background: white;
 }
 
 .Maze {
-    width: var(--maze-size);
-    height: var(--maze-size);
-    margin: 20px auto;
-    display: grid;
-    grid-template-columns: repeat(var(--maze-num), auto);
-    grid-template-rows: repeat(var(--maze-num), auto);
-    grid-gap: 1px;
+  width: var(--maze-size);
+  height: var(--maze-size);
+  display: grid;
+  grid-template-columns: repeat(var(--maze-num), auto);
+  grid-template-rows: repeat(var(--maze-num), auto);
+  grid-gap: 1px;
+  border: var(--cell-border);
+  border-width: 5px;
 }
 
 .cell {
-  background-color: #dfe6e9;
+  background-color: var(--green);
   opacity: 0.7;
+  margin: -3px;
 }
 
 .top {
-	border-top: 1px solid gray;
+  border-top: var(--cell-border);
 }
 
 .right {
-	border-right: 1px solid gray;
+  border-right: var(--cell-border);
 }
 
 .bottom {
-	border-bottom: 1px solid gray;
+  border-bottom: var(--cell-border);
 }
 
 .left {
-	border-left: 1px solid gray;
+  border-left: var(--cell-border);
 }
 
 .visited {
-	background-color: white;
+  background-color: var(--light-yellow);
 }
 
 .active {
-	background-color: black;
+  background-color: var(--red);
+  border-radius: 50%;
+  border-color: var(--red);
+  border-width: 1px;
+  opacity: 1;
+  margin: 2px;
 }
 
 .Controls {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
 }
 
-.start, .stop, .reload {
-  color: white;
-  padding: 7px 12px;
+.start,
+.stop,
+.reload {
+  font-size: 26px;
   text-transform: uppercase;
-  font-weight: 400;
-  letter-spacing: 3px;
-  border-radius: 3px;
 }
 
 .start {
-    background-color: #00b894;
+  background-color: var(--blue);
 }
 
 .stop {
-    background-color: #d63031;
+  background-color: var(--yellow);
 }
 
 .reload {
-    background-color: #00b894;
+  background-color: var(--blue);
+  margin: auto;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
